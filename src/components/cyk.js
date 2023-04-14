@@ -1,3 +1,7 @@
+import { v4 as uuidv4 } from "uuid";
+import { possibility, structure } from "./datastructure";
+
+
 function crossProduct(st1, st2){
     const product = new Set()
     st1.forEach(e1 => {
@@ -11,31 +15,39 @@ function crossProduct(st1, st2){
 function cykAlgorithm(target, dict){
     var len = target.length
     var table = []
+    
     for(var i = 0; i < len; i++){
         table[i]=[]
         for(var j = 0; j < len; j++)
         {
-            table[i][j] = new Set()
+            table[i][j] = new structure()
+            table[i][j].id = uuidv4()
         }
     }
     for(var i = 0; i < len; i++){
         if(dict[target[i]] === undefined)
             continue;
+        table[0][i].final_product = new Set()
         dict[target[i]].forEach(e => {
-            table[0][i].add(e)
+            table[0][i].final_product.add(e);
         })
     }
     for(var i = 1; i < len; i++){
         for(var j = 0; j < len-i; j++){
             for(var index = 0; index < i; index++){
-                var temp_prod = crossProduct(table[index][j], table[i-index-1][j+index+1])
+                const psblt = new possibility();
+                psblt.productOf = [table[index][j].final_product,table[i-index-1][j+index+1].final_product];
+                const temp_prod = crossProduct(table[index][j].final_product, table[i-index-1][j+index+1].final_product);
+                psblt.dot_product = temp_prod;
                 temp_prod.forEach(e => {
                     if(dict[e] !== undefined){
                         dict[e].forEach(ee =>{
-                            table[i][j].add(ee)
+                            psblt.contribution.add(ee);
+                            table[i][j].final_product.add(ee);
                         })
                     }
                 })
+                table[i][j].possibilities.push(psblt)
             }
         }
     }
@@ -43,16 +55,7 @@ function cykAlgorithm(target, dict){
 }
 
 function _isMember(target, dict){
-    var table = cykAlgorithm(target, dict)
-    var substrings = new Set()
-    for(var i = 0; i < target.length; i++){
-        for(var j = 0; j < target.length; j++){
-            if(table[i][j].has('S')){
-                substrings.add(target.substring(j,j+i+1))
-            }
-        }
-    }
-    return substrings
+    return cykAlgorithm(target,dict)
 }
 
 function convertor(prod){
@@ -69,6 +72,25 @@ function convertor(prod){
 }
 
 export default function isMember(target, prods){
+// function isMember(target, prods){
     const inv_prod = convertor(prods);
     return _isMember(target, inv_prod)
 }
+// const t = 'baaba'
+// const p={
+
+// }
+
+// p['S']=new Set()
+// p['S'].add('AB')
+// p['S'].add('BC')
+// p['A']=new Set()
+// p['A'].add('BA')
+// p['A'].add('a')
+// p['B']=new Set()
+// p['B'].add('CC')
+// p['B'].add('b')
+// p['C']=new Set()
+// p['C'].add('AB')
+// p['C'].add('a')
+// isMember(t, p)

@@ -6,8 +6,10 @@ import Output from './components/output';
 
 
 function App() {
-  const [all_substr, setAll_substr] = useState(new Set())
-  var target = '';
+  // const [all_substr, setAll_substr] = useState(new Set())
+  const [table, setTable] = useState([[]])
+  var [target, setTarget] = useState('')
+  // var target = '';
   const productions = {}
 
   const dataHandler = (tgt, prods) => {
@@ -24,12 +26,30 @@ function App() {
         })
       }
     });
-    setAll_substr(isMember(target,productions));
+    const t = 'baaba'
+    const p={
+
+    }
+    
+    p['S']=new Set()
+    p['S'].add('AB')
+    p['S'].add('BC')
+    p['A']=new Set()
+    p['A'].add('BA')
+    p['A'].add('a')
+    p['B']=new Set()
+    p['B'].add('CC')
+    p['B'].add('b')
+    p['C']=new Set()
+    p['C'].add('AB')
+    p['C'].add('a')
+    setTarget(t)
+    setTable(isMember(t, p))
   };
   return (
     <div>
       <Input dataHandler={dataHandler}/>
-      <Output all_substr = {all_substr}></Output>
+      <Output table={table} target={target} ></Output>
     </div>
   );
 }
