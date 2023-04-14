@@ -24,12 +24,20 @@ export default function DetailedOutput(props){
         });
         return str.substring(0, str.length-1)
     }
-    
+
     const printCell = (item, index) => {
-        const p1 = preprocess(item.productOf[0])
-        const p2 = preprocess(item.productOf[1])
-        const prod = preprocess(item.dot_product)
-        const contri = preprocess(item.contribution)
+        var p1 = preprocess(item.productOf[0])
+        if(p1 === '')
+            p1='-'
+        var p2 = preprocess(item.productOf[1])
+        if(p2 === '')
+            p2='-'
+        var prod = preprocess(item.dot_product)
+        if(prod === '')
+            prod='-'
+        var contri = preprocess(item.contribution)
+        if(contri === '')
+            contri='-'
         return (
             <td key={index}>
             <table>

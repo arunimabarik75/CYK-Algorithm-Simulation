@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { possibility, structure } from "./datastructure";
+import possibility from '../structures/possibility';
+import structure from '../structures/structure'
 
 
 function crossProduct(st1, st2){
@@ -24,7 +25,7 @@ function cykAlgorithm(target, dict){
             table[i][j].id = uuidv4()
         }
     }
-    for(var i = 0; i < len; i++){
+    for(i = 0; i < len; i++){
         if(dict[target[i]] === undefined)
             continue;
         table[0][i].final_product = new Set()
@@ -32,8 +33,8 @@ function cykAlgorithm(target, dict){
             table[0][i].final_product.add(e);
         })
     }
-    for(var i = 1; i < len; i++){
-        for(var j = 0; j < len-i; j++){
+    for(i = 1; i < len; i++){
+        for(j = 0; j < len-i; j++){
             for(var index = 0; index < i; index++){
                 const psblt = new possibility();
                 psblt.productOf = [table[index][j].final_product,table[i-index-1][j+index+1].final_product];
@@ -76,21 +77,3 @@ export default function isMember(target, prods){
     const inv_prod = convertor(prods);
     return _isMember(target, inv_prod)
 }
-// const t = 'baaba'
-// const p={
-
-// }
-
-// p['S']=new Set()
-// p['S'].add('AB')
-// p['S'].add('BC')
-// p['A']=new Set()
-// p['A'].add('BA')
-// p['A'].add('a')
-// p['B']=new Set()
-// p['B'].add('CC')
-// p['B'].add('b')
-// p['C']=new Set()
-// p['C'].add('AB')
-// p['C'].add('a')
-// isMember(t, p)
