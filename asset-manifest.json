@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/CYK-Algorithm-Simulation/static/css/main.073c9b0a.css",
-    "main.js": "/CYK-Algorithm-Simulation/static/js/main.c16096f1.js",
+    "main.css": "/CYK-Algorithm-Simulation/static/css/main.7834dede.css",
+    "main.js": "/CYK-Algorithm-Simulation/static/js/main.162e7206.js",
     "index.html": "/CYK-Algorithm-Simulation/index.html",
-    "main.073c9b0a.css.map": "/CYK-Algorithm-Simulation/static/css/main.073c9b0a.css.map",
-    "main.c16096f1.js.map": "/CYK-Algorithm-Simulation/static/js/main.c16096f1.js.map"
+    "main.7834dede.css.map": "/CYK-Algorithm-Simulation/static/css/main.7834dede.css.map",
+    "main.162e7206.js.map": "/CYK-Algorithm-Simulation/static/js/main.162e7206.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.c16096f1.js"
+    "static/css/main.7834dede.css",
+    "static/js/main.162e7206.js"
   ]
 }
