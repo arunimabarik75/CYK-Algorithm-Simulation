@@ -1,13 +1,15 @@
 import './App.css';
 import { useState } from 'react';
 import Input from './components/input';
-import isMember from './components/cyk';
+import isMember from './algorithms/cyk';
 import Output from './components/output';
 
 
 function App() {
-  const [table, setTable] = useState([[]])
-  var [target, setTarget] = useState('')
+  const [component_state, setComponent_State] = useState({
+    table: [],
+    target: ''
+  })
   const productions = {}
 
   const dataHandler = (tgt, prods) => {
@@ -24,14 +26,13 @@ function App() {
         })
       }
     });
-    setTable(isMember(target, productions))
-    setTarget(tgt)
+    setComponent_State(prev_state => ({...prev_state, target: tgt}))
+    setComponent_State(prev_state => ({...prev_state, table: isMember(tgt, productions)}))
   };
   return (
     <div>
-      {target}
       <Input dataHandler={dataHandler}/>
-      <Output table={table} target={target} ></Output>
+      <Output table={component_state.table} target={component_state.target} ></Output>
     </div>
   );
 }
