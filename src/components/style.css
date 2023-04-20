@@ -190,5 +190,8 @@ hr {
 }
 
 .show{
-    display: none;
+    visibility: visible;
+}
+.hide{
+    visibility: visible;
 }
