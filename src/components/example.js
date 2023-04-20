@@ -11,7 +11,8 @@ function Example() {
   const [component_state, setComponent_State] = useState({
     table: [],
     target: '',
-    substr: new Set()
+    substr: new Set(),
+    cname: 'show'
   })
   const productions = {}
 
@@ -35,10 +36,11 @@ function Example() {
   };
   
   function findSubstring(){
+    console.log(component_state.table);
     var lst = new Set();
     for(var i = 0; i < component_state.target.length; i++){
       for(var j = 0; j < component_state.target.length-i; j++){
-        if(component_state.table[i][j].final_product.has('S')){
+        if(component_state.table[i][j].final_product.has('S') || component_state.table[i][j].final_product.has('s')){
           console.log(i,j,component_state.target.substring(j, j+i+1));
           lst.add(component_state.target.substring(j, j+i+1));
         }

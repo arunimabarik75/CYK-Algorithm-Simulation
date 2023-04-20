@@ -10,6 +10,7 @@ export default function Output(props) {
     }
     const table = props.table;
     const substr = [...props.substr];
+    const cname = props.cname;
     const preprocess = (str_set) => {
         var str = ''
         if(str_set === undefined)
@@ -60,10 +61,9 @@ export default function Output(props) {
                     ))}
                 </tbody>
             </table>
-            <br />
             <p>Cross Product Calculations :</p>
             <DetailedOutput table = {table} k= {k}></DetailedOutput>
-            <div>Accepted substrings</div>
+            <p className={cname}>Accepted substrings</p>
             <ol>
                 {
                     substr.map((item, index) => 

@@ -40,6 +40,9 @@ function Input({dataHandler}){
             }
             const valuetoupdate = productions.findIndex(filter);
             productions[valuetoupdate][keyorvalue] = e.target.value;
+            if(keyorvalue === 'key'){
+                productions[valuetoupdate][keyorvalue] = e.target.value.charAt(0).toUpperCase();
+            }
             return [...productions];
         })
     }

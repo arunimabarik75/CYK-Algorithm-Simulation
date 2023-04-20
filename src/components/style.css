@@ -184,3 +184,7 @@ hr {
 #intro_page_know:hover:before{
     content: "Know More about the algorithm➡️";
 }
+
+.show{
+    display: none;
+}
