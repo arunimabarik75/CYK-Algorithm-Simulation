@@ -23,7 +23,7 @@ export default function Output(props) {
     const printCell = (item, index) => {
         var str = preprocess(item.final_product);
         if(str === '')
-            str='X'
+            str='-'
         return (<td key={index}><button onClick={handleClick} className='trnsp-btn' id={item.id}>{str}</button></td>);
     }
     const printRow = (item,index) => {

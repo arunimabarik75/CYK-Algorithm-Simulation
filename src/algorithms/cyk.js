@@ -32,23 +32,34 @@ function cykAlgorithm(target, dict){
         dict[target[i]].forEach(e => {
             table[0][i].final_product.add(e);
         })
+        if(table[0][i].final_product.size === 0){
+            table[0][i].final_product.add('-');
+        }
     }
     for(i = 1; i < len; i++){
-        for(j = 0; j < len-i; j++){
-            for(var index = 0; index < i; index++){
-                const psblt = new possibility();
-                psblt.productOf = [table[index][j].final_product,table[i-index-1][j+index+1].final_product];
-                const temp_prod = crossProduct(table[index][j].final_product, table[i-index-1][j+index+1].final_product);
-                psblt.dot_product = temp_prod;
-                temp_prod.forEach(e => {
-                    if(dict[e] !== undefined){
-                        dict[e].forEach(ee =>{
-                            psblt.contribution.add(ee);
-                            table[i][j].final_product.add(ee);
-                        })
-                    }
-                })
-                table[i][j].possibilities.push(psblt)
+        for(j = 0; j < len; j++){
+            if(j < len-i){
+                for(var index = 0; index < i; index++){
+                    const psblt = new possibility();
+                    psblt.productOf = [table[index][j].final_product,table[i-index-1][j+index+1].final_product];
+                    const temp_prod = crossProduct(table[index][j].final_product, table[i-index-1][j+index+1].final_product);
+                    psblt.dot_product = temp_prod;
+                    temp_prod.forEach(e => {
+                        if(dict[e] !== undefined){
+                            dict[e].forEach(ee =>{
+                                psblt.contribution.add(ee);
+                                table[i][j].final_product.add(ee);
+                            })
+                        }
+                    })
+                    table[i][j].possibilities.push(psblt)
+                }
+                if(table[i][j].final_product.size === 0){
+                    table[i][j].final_product.add('-');
+                }
+            }
+            else{
+                table[i][j].final_product.add('X');
             }
         }
     }
