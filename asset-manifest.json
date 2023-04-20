@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/CYK-Algorithm-Simulation/static/css/main.7834dede.css",
-    "main.js": "/CYK-Algorithm-Simulation/static/js/main.9eb122d5.js",
+    "main.css": "/CYK-Algorithm-Simulation/static/css/main.78506e1c.css",
+    "main.js": "/CYK-Algorithm-Simulation/static/js/main.25c61e8e.js",
+    "static/media/background.jpg": "/CYK-Algorithm-Simulation/static/media/background.9b33c3554b26a1f56baa.jpg",
+    "static/media/algorithm.png": "/CYK-Algorithm-Simulation/static/media/algorithm.38555103fa93933bbf9a.png",
+    "static/media/table.png": "/CYK-Algorithm-Simulation/static/media/table.ec91afae98a20896831d.png",
     "index.html": "/CYK-Algorithm-Simulation/index.html",
-    "main.7834dede.css.map": "/CYK-Algorithm-Simulation/static/css/main.7834dede.css.map",
-    "main.9eb122d5.js.map": "/CYK-Algorithm-Simulation/static/js/main.9eb122d5.js.map"
+    "main.78506e1c.css.map": "/CYK-Algorithm-Simulation/static/css/main.78506e1c.css.map",
+    "main.25c61e8e.js.map": "/CYK-Algorithm-Simulation/static/js/main.25c61e8e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7834dede.css",
-    "static/js/main.9eb122d5.js"
+    "static/css/main.78506e1c.css",
+    "static/js/main.25c61e8e.js"
   ]
 }
