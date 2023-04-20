@@ -9,6 +9,7 @@ export default function Output(props) {
         tgt.push(props.target.charAt(i))
     }
     const table = props.table;
+    // console.log(table)
     const substr = [...props.substr];
     const cname = props.cname;
     const preprocess = (str_set) => {

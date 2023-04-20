@@ -41,7 +41,8 @@ function Input({dataHandler}){
             const valuetoupdate = productions.findIndex(filter);
             productions[valuetoupdate][keyorvalue] = e.target.value;
             if(keyorvalue === 'key'){
-                productions[valuetoupdate][keyorvalue] = e.target.value.charAt(0).toUpperCase();
+                productions[valuetoupdate][keyorvalue] = productions[valuetoupdate][keyorvalue].charAt(0).toUpperCase();
+                console.log(productions[valuetoupdate][keyorvalue])
             }
             return [...productions];
         })
