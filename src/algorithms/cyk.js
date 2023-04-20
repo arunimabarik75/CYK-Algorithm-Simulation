@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from "uuid";
 import possibility from '../structures/possibility';
 import structure from '../structures/structure'
 
-
 function crossProduct(st1, st2){
     const product = new Set()
     st1.forEach(e1 => {

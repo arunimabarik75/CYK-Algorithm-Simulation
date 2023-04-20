@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Merriweather+Sans&family=Poller+One&family=Syncopate&display=swap');
+
+.outer {
+    width: 100hh;
+    height:100vh;
+    /* background-color: blue; */
+    display: flex;
+}
+
+.left {
+    background-color: aqua;
+    width: 60%;
+    float: left;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.right {
+    /* background-color: red; */
+    width: 40%;
+    float: right;
+    display: flex;
+    vertical-align: center;
+    background-color: rgb(199, 199, 245);
+}
+
+.topic-name {
+    border-collapse: collapse;
+    align-self: center;
+    border: white;
+    margin: auto;
+}
+
+.button-text {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+th {
+    font-size: 5.5em;
+    padding: 20px;
+    font-family: 'Poller One', cursive;
+    border: white;
+    text-align: center;
+}
+
+td {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+    border: white;
+    text-align: center;
+}
+
+.background {
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Poller One', cursive;
+    text-align: center;
+    font-size: 3.5em;
+    color:rgb(101, 2, 2);
+}
+
+h2 {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: bolder;
+    color: blue;
+    padding-top: 20px;
+}
+
+p {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1.5em;
+}
+
+hr {
+    border: 4px solid red;;
+}
+
+.algo-image {
+    background-image: url('algorithm.png');
+    height: 300px;
+    width: 910px;
+}
+
+.cfg {
+    background-image: url('cfg.png');
+    height: 120px;
+    width: 100px;
+}
+
+.table {
+    background-image: url('table.png');
+    height: 300px;
+    width: 928px;
+}
