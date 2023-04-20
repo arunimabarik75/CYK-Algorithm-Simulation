@@ -193,7 +193,9 @@ hr {
     content: "Know More about the algorithm➡️";
 }
 
-ol {
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 2em;
+.show{
+    visibility: visible;
+}
+.hide{
+    visibility: visible;
 }

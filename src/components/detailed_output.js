@@ -66,7 +66,8 @@ export default function DetailedOutput(props){
             </tr>
         )
     }
-    return (<table>
+    return (
+    <table>
         <tbody>
             {printRow(table[t.i][t.j].possibilities)}
         </tbody>

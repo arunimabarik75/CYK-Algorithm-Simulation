@@ -11,7 +11,8 @@ function Example() {
   const [component_state, setComponent_State] = useState({
     table: [],
     target: '',
-    substr: new Set()
+    substr: new Set(),
+    cname: 'show'
   })
   const productions = {}
 
@@ -31,22 +32,23 @@ function Example() {
         })
       }
     });
-    setComponent_State(prev_state => ({...prev_state, target: tgt}))
-    setComponent_State(prev_state => ({...prev_state, table: isMember(tgt, productions)}))
-    findSubstring();
+    findSubstring(tgt,productions);
   };
-  
-  function findSubstring(){
+  // table, tgt, 
+  function findSubstring(tgt,productions){
+    console.log(component_state.table);
     var lst = new Set();
-    for(var i = 0; i < component_state.target.length; i++){
-      for(var j = 0; j < component_state.target.length-i; j++){
-        if(component_state.table[i][j].final_product.has('S')){
-          console.log(i,j,component_state.target.substring(j, j+i+1));
-          lst.add(component_state.target.substring(j, j+i+1));
+    const tbl = isMember(tgt,productions);
+    for(var i = 0; i < tgt.length; i++){
+      for(var j = 0; j < tgt.length-i; j++){
+        if(tbl[i][j].final_product.has('S') || tbl[i][j].final_product.has('s')){
+          console.log(i,j,tgt.substring(j, j+i+1));
+          lst.add(tgt.substring(j, j+i+1));
         }
       }
     }
-    console.log(lst);
+    setComponent_State(prev_state => ({...prev_state, target: tgt}))
+    setComponent_State(prev_state => ({...prev_state, table: isMember(tgt,productions)}))
     setComponent_State(prev_state => ({...prev_state, substr: lst}))
   }
   return (

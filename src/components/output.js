@@ -9,7 +9,9 @@ export default function Output(props) {
         tgt.push(props.target.charAt(i))
     }
     const table = props.table;
+    // console.log(table)
     const substr = [...props.substr];
+    const cname = props.cname;
     const preprocess = (str_set) => {
         var str = ''
         if(str_set === undefined)
@@ -60,12 +62,9 @@ export default function Output(props) {
                     ))}
                 </tbody>
             </table>
-            <br />
-            <p>Cross Product Calculations</p>
-            <DetailedOutput table={table} k={k}></DetailedOutput>
-            
-            <br />
-            <p>Accepted substrings</p>
+            <p>Cross Product Calculations :</p>
+            <DetailedOutput table = {table} k= {k}></DetailedOutput>
+            <p className={cname}>Accepted substrings</p>
             <ol>
                 {
                     substr.map((item, index) => 
