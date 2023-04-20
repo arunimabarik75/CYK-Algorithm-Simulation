@@ -7,7 +7,7 @@ import Output from './output';
 import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
-function example() {
+function Example() {
   const [component_state, setComponent_State] = useState({
     table: [],
     target: ''
@@ -47,4 +47,4 @@ function example() {
   );
 }
 
-export default example;
+export default Example;
