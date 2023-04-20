@@ -96,3 +96,9 @@ hr {
     height: 300px;
     width: 928px;
 }
+
+input {
+    width: 20px;
+    border: 2px solid red;
+    border-radius: 1px;
+}

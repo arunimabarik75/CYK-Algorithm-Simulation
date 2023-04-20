@@ -1,5 +1,10 @@
 import {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Container } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function Input({dataHandler}){
     const production_type =[
@@ -49,7 +54,18 @@ function Input({dataHandler}){
             {
                 productions.map((item) => {
                     return (<div key={item.id}>
-                        <input id={'1'+item.id} placeholder='Nonterminal symbol' onChange={handleChange} style = {{height: '20px', width:'120px', padding: '5px', margin: '5px'}}  value={(item.key).charAt(item.key.length-1).toUpperCase()} type='text' required></input>
+{/*                         
+                        <Container>
+                            <Row>
+                                <Col><Form.Control id={'1' + item.id} type='text' placeholder='Non Terminal Symbol' onChange={handleChange} value={(item.key).charAt(item.key.length - 1).toUpperCase()} required></Form.Control></Col>
+                                <Col><Form.Control id={'1' + item.id} type='text' placeholder='Non Terminal Symbol' onChange={handleChange} value={(item.key).charAt(item.key.length - 1).toUpperCase()} required></Form.Control></Col>
+                            </Row>
+                        </Container>
+                         */}
+                        
+                        
+                        
+                        <input id={'1' + item.id} placeholder='Nonterminal symbol' onChange={handleChange} style={{ height: '20px', width: '120px', padding: '5px', margin: '5px' }} value={(item.key).charAt(item.key.length - 1).toUpperCase()} type='text' required></input>
                         <input id={'2'+item.id} placeholder='Terminal/Nonterminal symbol' onChange={handleChange}  value={item.value} style = {{height: '20px', width:'190px', padding: '5px', margin: '5px'}} type='text' required></input>
                         <button id={item.id} style = {{height: '30px', width: '30px',  padding: '5px', margin: '5px'}} onClick={removeProduction}> - </button>
                     </div>)
