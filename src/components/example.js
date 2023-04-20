@@ -12,7 +12,7 @@ function Example() {
     table: [],
     target: '',
     substr: new Set(),
-    cname: 'show'
+    cname: 'hide123'
   })
   const productions = {}
 
@@ -48,6 +48,7 @@ function Example() {
     setComponent_State(prev_state => ({...prev_state, target: tgt}))
     setComponent_State(prev_state => ({...prev_state, table: isMember(tgt,productions)}))
     setComponent_State(prev_state => ({...prev_state, substr: lst}))
+    setComponent_State(prev_state => ({...prev_state, cname: 'show123'}))
   }
   return (
     <div className='background'>
@@ -59,7 +60,7 @@ function Example() {
       <br />
 
       <Input dataHandler={dataHandler}/> 
-      <Output table={component_state.table} target={component_state.target} substr={component_state.substr} ></Output>
+      <Output table={component_state.table} target={component_state.target} substr={component_state.substr} cname = {component_state.cname}></Output>
     </div>
   );
 }

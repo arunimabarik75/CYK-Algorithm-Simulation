@@ -12,6 +12,7 @@ export default function Output(props) {
     // console.log(table)
     const substr = [...props.substr];
     const cname = props.cname;
+    console.log(cname);
     const preprocess = (str_set) => {
         var str = ''
         if(str_set === undefined)
@@ -43,8 +44,8 @@ export default function Output(props) {
     }
     return (
         <div className='output'>
-            <h2>Output</h2>
-            <p>CYK Table</p>
+            <h2 className={cname}>Output</h2>
+            <p className={cname}>CYK Table</p>
             <table className='cyk-table'>
                 <thead>
                     <tr>
@@ -62,7 +63,7 @@ export default function Output(props) {
                     ))}
                 </tbody>
             </table>
-            <p>Cross Product Calculations :</p>
+            <p className={cname}>Cross Product Calculations</p>
             <DetailedOutput table = {table} k= {k}></DetailedOutput>
             <p className={cname}>Accepted substrings</p>
             <ol>

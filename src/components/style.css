@@ -189,9 +189,9 @@ hr {
     content: "Know More about the algorithm➡️";
 }
 
-.show{
+.show123{
     visibility: visible;
 }
-.hide{
-    visibility: visible;
+.hide123{
+    visibility: hidden;
 }
