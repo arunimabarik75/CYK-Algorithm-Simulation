@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Input from './input';
 import isMember from '../algorithms/cyk';
 import Output from './output';
+import { NavLink } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 function example() {
   const [component_state, setComponent_State] = useState({
@@ -35,7 +37,7 @@ function example() {
       <hr />
 
       <br />
-      <NavLink to='/'><Button variant='primary' size='lg' className='button-text'>&nbsp;&nbsp;Back to home&nbsp;&nbsp;</Button></NavLink>
+      <NavLink to='/CYK-Algorithm-Simulation'><Button variant='primary' size='lg' className='button-text'>&nbsp;&nbsp;Back to home&nbsp;&nbsp;</Button></NavLink>
       <br />
       <br/>
 
