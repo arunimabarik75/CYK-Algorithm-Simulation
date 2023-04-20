@@ -38,6 +38,10 @@
     font-family: 'Merriweather Sans', sans-serif;
 }
 
+.button-text2 {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
 .topic-name th {
     font-size: 5.5em;
     padding: 20px;
@@ -183,4 +187,9 @@ hr {
 }
 #intro_page_know:hover:before{
     content: "Know More about the algorithm➡️";
+}
+
+ol {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 2em;
 }

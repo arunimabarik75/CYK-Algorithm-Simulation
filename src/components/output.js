@@ -61,9 +61,11 @@ export default function Output(props) {
                 </tbody>
             </table>
             <br />
-            <p>Cross Product Calculations :</p>
-            <DetailedOutput table = {table} k= {k}></DetailedOutput>
-            <div>Accepted substrings</div>
+            <p>Cross Product Calculations</p>
+            <DetailedOutput table={table} k={k}></DetailedOutput>
+            
+            <br />
+            <p>Accepted substrings</p>
             <ol>
                 {
                     substr.map((item, index) => 

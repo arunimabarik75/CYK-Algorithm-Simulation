@@ -28,6 +28,7 @@ export default function information() {
       <p>The string to be checked is w =ababa</p>
       <p>The length of string |w| = 5</p>
       <div className='table-image'></div>
+      <br />
       <p>S is present in the last cell so the string is valid.</p>
     </div>
   )

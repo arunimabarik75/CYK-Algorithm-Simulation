@@ -26,6 +26,7 @@ export default function homepage() {
                   <tr><td colSpan='3'>
                   <NavLink to='/information'><Button variant='outline-danger' className='button-text' id='intro_page_know' size='lg'><span>&nbsp;&nbsp;Know More about the algorithm&nbsp;&nbsp;</span></Button></NavLink></td></tr>
                   <tr><br /></tr>
+          
                   <tr><td colSpan='3'>
                   <NavLink to='/example'><Button variant='outline-success' className='button-text' id='intro_page_try' size='lg'><span>&nbsp;&nbsp;Try an example&nbsp;&nbsp;</span></Button></NavLink></td></tr>
                   <tr><br /></tr>
