@@ -1,5 +1,6 @@
 import {useState} from 'react';
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+
 function Input({dataHandler}){
     const production_type =[
         {
@@ -43,7 +44,8 @@ function Input({dataHandler}){
         })
     }
     return (
-        <div>
+        <div className='background'>
+            <p>Enter CFG (in CNF) :</p>
             {
                 productions.map((item) => {
                     return (<div key={item.id}>
