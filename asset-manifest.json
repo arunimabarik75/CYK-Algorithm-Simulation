@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/CYK-Algorithm-Simulation/static/css/main.78506e1c.css",
-    "main.js": "/CYK-Algorithm-Simulation/static/js/main.25c61e8e.js",
-    "static/media/background.jpg": "/CYK-Algorithm-Simulation/static/media/background.9b33c3554b26a1f56baa.jpg",
+    "main.css": "/CYK-Algorithm-Simulation/static/css/main.90af8f7f.css",
+    "main.js": "/CYK-Algorithm-Simulation/static/js/main.0344b7b8.js",
+    "static/media/background.png": "/CYK-Algorithm-Simulation/static/media/background.e0de3a04a4baa3647d7b.png",
     "static/media/algorithm.png": "/CYK-Algorithm-Simulation/static/media/algorithm.38555103fa93933bbf9a.png",
-    "static/media/table.png": "/CYK-Algorithm-Simulation/static/media/table.ec91afae98a20896831d.png",
+    "static/media/table.png": "/CYK-Algorithm-Simulation/static/media/table.53e5d8ca28a37d23a7f1.png",
     "index.html": "/CYK-Algorithm-Simulation/index.html",
-    "main.78506e1c.css.map": "/CYK-Algorithm-Simulation/static/css/main.78506e1c.css.map",
-    "main.25c61e8e.js.map": "/CYK-Algorithm-Simulation/static/js/main.25c61e8e.js.map"
+    "main.90af8f7f.css.map": "/CYK-Algorithm-Simulation/static/css/main.90af8f7f.css.map",
+    "main.0344b7b8.js.map": "/CYK-Algorithm-Simulation/static/js/main.0344b7b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.78506e1c.css",
-    "static/js/main.25c61e8e.js"
+    "static/css/main.90af8f7f.css",
+    "static/js/main.0344b7b8.js"
   ]
 }
