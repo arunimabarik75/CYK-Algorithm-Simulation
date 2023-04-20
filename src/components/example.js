@@ -17,6 +17,8 @@ function Example() {
   const productions = {}
 
   const dataHandler = (tgt, prods) => {
+    let window = document.getElementsByClassName('output');
+
     prods.forEach(e => {
       
       const key = e.key.charAt(e.key.length-1).toUpperCase()
