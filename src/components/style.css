@@ -10,10 +10,12 @@
 .left {
     background-color: aqua;
     width: 60%;
-    float: left;
-    background-image: url('background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* float: left; */
+    /* background-image: url('../assets/background.png');
+    background-repeat: no-repeat; */
+    /* background-size: fill; */
+    /* background-size: contain; */
+    /* background-size: 100vh ; */
 }
 
 .right {
@@ -168,3 +170,17 @@ hr {
 } 
 
 
+.button-text:hover span{
+    display: none;
+}
+
+.button-text:hover:before{
+    content: "⬅️";
+}
+
+#intro_page_try:hover:before{
+    content: "Try an example➡️";
+}
+#intro_page_know:hover:before{
+    content: "Know More about the algorithm➡️";
+}

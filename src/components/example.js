@@ -10,7 +10,8 @@ import Button from 'react-bootstrap/Button';
 function Example() {
   const [component_state, setComponent_State] = useState({
     table: [],
-    target: ''
+    target: '',
+    substr: new Set()
   })
   const productions = {}
 
@@ -29,9 +30,23 @@ function Example() {
       }
     });
     setComponent_State(prev_state => ({...prev_state, target: tgt}))
-    setComponent_State(prev_state => ({ ...prev_state, table: isMember(tgt, productions) }));
-    
+    setComponent_State(prev_state => ({...prev_state, table: isMember(tgt, productions)}))
+    findSubstring();
   };
+  
+  function findSubstring(){
+    var lst = new Set();
+    for(var i = 0; i < component_state.target.length; i++){
+      for(var j = 0; j < component_state.target.length-i; j++){
+        if(component_state.table[i][j].final_product.has('S')){
+          console.log(i,j,component_state.target.substring(j, j+i+1));
+          lst.add(component_state.target.substring(j, j+i+1));
+        }
+      }
+    }
+    console.log(lst);
+    setComponent_State(prev_state => ({...prev_state, substr: lst}))
+  }
   return (
     <div className='background'>
       <h1>Simulation</h1>
@@ -42,7 +57,7 @@ function Example() {
       <br />
 
       <Input dataHandler={dataHandler}/> 
-      <Output table={component_state.table} target={component_state.target} ></Output>
+      <Output table={component_state.table} target={component_state.target} substr={component_state.substr} ></Output>
     </div>
   );
 }
