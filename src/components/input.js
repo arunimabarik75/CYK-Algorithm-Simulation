@@ -50,33 +50,50 @@ function Input({dataHandler}){
     }
     return (
         <div className='background'>
+            <h2>Input</h2>
             <p>Enter CFG (in CNF) :</p>
+            <Button variant='outline-success' className='button-text' size='lg' onClick={addProduction}>&nbsp;&nbsp;Add&nbsp;&nbsp;</Button>
+            <br />
+            <br />            
             {
                 productions.map((item) => {
                     return (<div key={item.id}>
-{/*                         
                         <Container>
                             <Row>
-                                <Col><Form.Control id={'1' + item.id} type='text' placeholder='Non Terminal Symbol' onChange={handleChange} value={(item.key).charAt(item.key.length - 1).toUpperCase()} required></Form.Control></Col>
-                                <Col><Form.Control id={'1' + item.id} type='text' placeholder='Non Terminal Symbol' onChange={handleChange} value={(item.key).charAt(item.key.length - 1).toUpperCase()} required></Form.Control></Col>
+                                <Col>
+                                    <Form.Control type='text' id={'1' + item.id}placeholder='Non Terminal Symbol' onChange={handleChange}className='first' value={(item.key).charAt(item.key.length - 1).toUpperCase()} required></Form.Control></Col>
+                                
+                                <Col>
+                                    <Form.Control id={'2' + item.id}type='text' placeholder='Terminal/ Non Terminal Symbol' onChange={handleChange} className='second' value={item.value} required></Form.Control></Col>
+                                
+                                <Col>
+                                <Button id={item.id} variant='outline-danger' className='button-text' onClick={removeProduction}size = 'lg'>&nbsp;&nbsp;Remove&nbsp;&nbsp;</Button></Col>
                             </Row>
+                            <br />
                         </Container>
-                         */}
-                        
-                        
-                        
-                        <input id={'1' + item.id} placeholder='Nonterminal symbol' onChange={handleChange} style={{ height: '20px', width: '120px', padding: '5px', margin: '5px' }} value={(item.key).charAt(item.key.length - 1).toUpperCase()} type='text' required></input>
-                        <input id={'2'+item.id} placeholder='Terminal/Nonterminal symbol' onChange={handleChange}  value={item.value} style = {{height: '20px', width:'190px', padding: '5px', margin: '5px'}} type='text' required></input>
-                        <button id={item.id} style = {{height: '30px', width: '30px',  padding: '5px', margin: '5px'}} onClick={removeProduction}> - </button>
+
                     </div>)
                 })
             }
-            <button onClick={addProduction}>Add one</button>
-            <div></div>
-            <input type='text' placeholder='target string' id='target' onChange={handleTgtChange} value={target}></input>
-            <button onClick={() => dataHandler(target, productions)}>Submit</button>
+            {/* <button onClick={addProduction}>Add one</button> */}
+            
+            <p>Enter target string :</p>
+            <Form.Control placeholder='Target string' className='string' id='target' onChange={handleTgtChange} value={target}></Form.Control>
+
+            {/* <input type='text' placeholder='target string' id='target' onChange={handleTgtChange} value={target}></input> */}
+            
+            <br />
+            <br />
+            <Button variant='outline-dark' size='lg' className='button-text' onClick={() => dataHandler(target, productions)}>&nbsp;&nbsp;Submit&nbsp;&nbsp;</Button>
         </div>
     )
 }
+export default Input;
 
-export default Input
+
+{/* <input id={'1' + item.id} placeholder='Nonterminal symbol' onChange={handleChange} value={(item.key).charAt(item.key.length - 1).toUpperCase()} type='text' required></input>
+
+<input id={'2'+item.id} placeholder='Terminal/Nonterminal symbol' onChange={handleChange} value={item.value} type='text' required></input>
+
+<button id={item.id} style={{ height: '30px', width: '30px', padding: '5px', margin: '5px' }} onClick={removeProduction}> - </button> */}
+

@@ -29,7 +29,8 @@ function Example() {
       }
     });
     setComponent_State(prev_state => ({...prev_state, target: tgt}))
-    setComponent_State(prev_state => ({...prev_state, table: isMember(tgt, productions)}))
+    setComponent_State(prev_state => ({ ...prev_state, table: isMember(tgt, productions) }));
+    
   };
   return (
     <div className='background'>
@@ -39,7 +40,6 @@ function Example() {
       <br />
       <NavLink to='/CYK-Algorithm-Simulation'><Button variant='primary' size='lg' className='button-text'>&nbsp;&nbsp;Back to home&nbsp;&nbsp;</Button></NavLink>
       <br />
-      <br/>
 
       <Input dataHandler={dataHandler}/> 
       <Output table={component_state.table} target={component_state.target} ></Output>

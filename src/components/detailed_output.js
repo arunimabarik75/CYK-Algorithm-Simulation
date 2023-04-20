@@ -40,7 +40,7 @@ export default function DetailedOutput(props){
             contri='-'
         return (
             <td key={index}>
-            <table>
+            <table className='operation-table'>
                 <tbody>
                 <tr>
                     <td>{p1}</td>

@@ -27,7 +27,7 @@ export default function information() {
       <div className='cfg'></div><br/>
       <p>The string to be checked is w =ababa</p>
       <p>The length of string |w| = 5</p>
-      <div className='table'></div>
+      <div className='table-image'></div>
       <p>S is present in the last cell so the string is valid.</p>
     </div>
   )

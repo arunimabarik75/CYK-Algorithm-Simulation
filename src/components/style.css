@@ -36,7 +36,7 @@
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-th {
+.topic-name th {
     font-size: 5.5em;
     padding: 20px;
     font-family: 'Poller One', cursive;
@@ -44,7 +44,7 @@ th {
     text-align: center;
 }
 
-td {
+.topic-name td {
     font-family: 'Syncopate', sans-serif;
     font-size: 1.5em;
     font-weight: bolder;
@@ -52,7 +52,7 @@ td {
     text-align: center;
 }
 
-.background {
+.background, .output {
     padding: 20px;
 }
 
@@ -91,14 +91,80 @@ hr {
     width: 100px;
 }
 
-.table {
+.table-image {
     background-image: url('table.png');
     height: 300px;
     width: 928px;
 }
 
-input {
-    width: 20px;
-    border: 2px solid red;
-    border-radius: 1px;
+.first {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    text-align: center;
+    border: 1px solid black;
 }
+
+.second {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    text-align: center;
+    border: 1px solid blue;
+}
+
+.string {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    text-align: center;
+    width: 500px;
+    border: 1px solid red;
+}
+
+.cyk-table {
+    border: 2px solid black;
+}
+
+.cyk-table td {
+    border: 2px solid black;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 2em;
+    padding: 5px;
+}
+
+.cyk-table thead {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+} 
+
+.operation-table{
+    border: 2px solid black;
+}
+
+.operation-table td {
+    border: 2px solid black;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 2em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.operation-table thead {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+} 
+
+

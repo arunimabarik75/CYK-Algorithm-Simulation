@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DetailedOutput from "./detailed_output";
+import Button from 'react-bootstrap/Button';
 
 export default function Output(props) {
     const [k,setK] = useState('');
@@ -24,7 +25,9 @@ export default function Output(props) {
         var str = preprocess(item.final_product);
         if(str === '')
             str='-'
-        return (<td key={index}><button onClick={handleClick} className='trnsp-btn' id={item.id}>{str}</button></td>);
+        // return (<td key={index}><button onClick={handleClick} className='trnsp-btn' id={item.id}>{str}</button></td>);
+
+        return (<td key={index}><Button variant='outline-primary' onClick={handleClick} size='lg' className='trnsp-btn' id={item.id}>{str}</Button></td>);
     }
     const printRow = (item,index) => {
         return (
@@ -36,9 +39,10 @@ export default function Output(props) {
         )
     }
     return (
-        <div>
-            <p></p>
-            <table>
+        <div className='output'>
+            <h2>Output</h2>
+            <p>CYK Table</p>
+            <table className='cyk-table'>
                 <thead>
                     <tr>
                         {
@@ -55,7 +59,8 @@ export default function Output(props) {
                     ))}
                 </tbody>
             </table>
-                <p></p>
+            <br />
+            <p>Cross Product Calculations :</p>
             <DetailedOutput table = {table} k= {k}></DetailedOutput>
         </div>
     )
