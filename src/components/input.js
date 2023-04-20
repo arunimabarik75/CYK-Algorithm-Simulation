@@ -55,8 +55,8 @@ function Input({dataHandler}){
     return (
         <div className='background'>
             <h2>Input</h2>
-            <p>Enter CFG (in CNF) :</p>
-            <Button variant='outline-success' className='button-text' size='lg' onClick={addProduction}>&nbsp;&nbsp;Add&nbsp;&nbsp;</Button>
+            <p>Enter CFG (in CNF)</p>
+            <Button variant='outline-success' className='button-text2' size='lg' onClick={addProduction}>&nbsp;&nbsp;Add&nbsp;&nbsp;</Button>
             <br />
             <br />            
             {
@@ -71,7 +71,7 @@ function Input({dataHandler}){
                                     <Form.Control id={'2' + item.id}type='text' placeholder='Terminal/ Non Terminal Symbol' onChange={handleChange} className='second' value={item.value} required></Form.Control></Col>
                                 
                                 <Col>
-                                <Button id={item.id} variant='outline-danger' className='button-text' onClick={removeProduction}size = 'lg'>&nbsp;&nbsp;Remove&nbsp;&nbsp;</Button></Col>
+                                <Button id={item.id} variant='outline-danger' className='button-text2' onClick={removeProduction}size = 'lg'>&nbsp;&nbsp;Remove&nbsp;&nbsp;</Button></Col>
                             </Row>
                             <br />
                         </Container>
@@ -81,14 +81,14 @@ function Input({dataHandler}){
             }
             {/* <button onClick={addProduction}>Add one</button> */}
             
-            <p>Enter target string :</p>
+            <p>Enter target string</p>
             <Form.Control placeholder='Target string' className='string' id='target' onChange={handleTgtChange} value={target}></Form.Control>
 
             {/* <input type='text' placeholder='target string' id='target' onChange={handleTgtChange} value={target}></input> */}
             
             <br />
             <br />
-            <Button variant='outline-dark' size='lg' className='button-text' onClick={() => dataHandler(target, productions)}>&nbsp;&nbsp;Submit&nbsp;&nbsp;</Button>
+            <Button variant='outline-dark' size='lg' className='button-text2' onClick={() => dataHandler(target, productions)}>&nbsp;&nbsp;Submit&nbsp;&nbsp;</Button>
         </div>
     )
 }
