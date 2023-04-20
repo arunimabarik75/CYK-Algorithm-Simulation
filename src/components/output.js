@@ -8,6 +8,7 @@ export default function Output(props) {
         tgt.push(props.target.charAt(i))
     }
     const table = props.table;
+    const substr = [...props.substr];
     const preprocess = (str_set) => {
         var str = ''
         if(str_set === undefined)
@@ -57,6 +58,14 @@ export default function Output(props) {
             </table>
                 <p></p>
             <DetailedOutput table = {table} k= {k}></DetailedOutput>
+            <div>Accepted substrings</div>
+            <ol>
+                {
+                    substr.map((item, index) => 
+                        <li key={index}>{item}</li>
+                    )
+                }
+            </ol>
         </div>
     )
 }
