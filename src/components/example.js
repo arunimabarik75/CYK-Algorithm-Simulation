@@ -14,11 +14,10 @@ function Example() {
     substr: new Set(),
     cname: 'hide123'
   })
+  const [showOutput, setShowOutput] = useState(false);
   const productions = {}
 
   const dataHandler = (tgt, prods) => {
-    let window = document.getElementsByClassName('output');
-
     prods.forEach(e => {
       
       const key = e.key.charAt(e.key.length-1).toUpperCase()
@@ -36,21 +35,26 @@ function Example() {
   };
   // table, tgt, 
   function findSubstring(tgt,productions){
-    console.log(component_state.table);
+    // console.log(component_state.table);
     var lst = new Set();
     const tbl = isMember(tgt,productions);
     for(var i = 0; i < tgt.length; i++){
       for(var j = 0; j < tgt.length-i; j++){
         if(tbl[i][j].final_product.has('S') || tbl[i][j].final_product.has('s')){
-          console.log(i,j,tgt.substring(j, j+i+1));
+          // console.log(i,j,tgt.substring(j, j+i+1));
           lst.add(tgt.substring(j, j+i+1));
         }
       }
     }
-    setComponent_State(prev_state => ({...prev_state, target: tgt}))
+    var temp_tgt = [];
+    for(i = 0; i < tgt.length; i++){
+      temp_tgt.push(tgt.charAt(i))
+    }
+    setComponent_State(prev_state => ({...prev_state, target: temp_tgt}))
     setComponent_State(prev_state => ({...prev_state, table: isMember(tgt,productions)}))
-    setComponent_State(prev_state => ({...prev_state, substr: lst}))
+    setComponent_State(prev_state => ({...prev_state, substr: [...lst]}))
     setComponent_State(prev_state => ({...prev_state, cname: 'show123'}))
+    setShowOutput(true);
   }
   return (
     <div className='background'>
@@ -62,7 +66,8 @@ function Example() {
       <br />
 
       <Input dataHandler={dataHandler}/> 
-      <Output table={component_state.table} target={component_state.target} substr={component_state.substr} cname = {component_state.cname}></Output>
+      {showOutput ? (<Output table={component_state.table} target={component_state.target} substr={component_state.substr} cname = {component_state.cname}></Output>):(<></>)}
+      {/* {showOutput && <Output table={component_state.table} target={component_state.target} substr={component_state.substr} cname = {component_state.cname}></Output>} */}
     </div>
   );
 }

@@ -2,21 +2,14 @@ import React, { useState } from "react";
 import DetailedOutput from "./detailed_output";
 import Button from 'react-bootstrap/Button';
 
-export default function Output(props) {
+export default function Output({table, target, substr, cname} ) {
     const [k,setK] = useState('');
-    const tgt = [];
-    for(var i = 0; i < props.target.length; i++){
-        tgt.push(props.target.charAt(i))
-    }
-    const table = props.table;
-    // console.log(table)
-    const substr = [...props.substr];
-    const cname = props.cname;
-    console.log(cname);
+    
     const preprocess = (str_set) => {
+        console.log(str_set)
         var str = ''
         if(str_set === undefined)
-            return str;
+        return str;
         str_set.forEach(s => {
             str+=s+'|'
         });
@@ -29,20 +22,22 @@ export default function Output(props) {
         var str = preprocess(item.final_product);
         if(str === '')
             str='-'
-        // return (<td key={index}><button onClick={handleClick} className='trnsp-btn' id={item.id}>{str}</button></td>);
-
+        // return (<td key={index}>{str}</td>);
         return (<td key={index}><Button variant='outline-primary' onClick={handleClick} size='lg' className='trnsp-btn' id={item.id}>{str}</Button></td>);
     }
     const printRow = (item,index) => {
+        
         return (
             <tr key = {index}>
                 {item.map((cell, index) => (
                     printCell(cell, index)
-                ))}
+                    ))}
             </tr>
         )
     }
+    // setTable(props.table);
     return (
+        // <></>
         <div className='output'>
             <h2 className={cname}>Output</h2>
             <p className={cname}>CYK Table</p>
@@ -50,7 +45,7 @@ export default function Output(props) {
                 <thead>
                     <tr>
                         {
-                            tgt.map((item, index) => {
+                            target.map((item, index) => {
                                 return <th key={index}>{item}</th>
                             })
                         }

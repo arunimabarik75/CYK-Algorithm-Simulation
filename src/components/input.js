@@ -79,13 +79,8 @@ function Input({dataHandler}){
                     </div>)
                 })
             }
-            {/* <button onClick={addProduction}>Add one</button> */}
-            
             <p>Enter target string</p>
             <Form.Control placeholder='Target string' className='string' id='target' onChange={handleTgtChange} value={target}></Form.Control>
-
-            {/* <input type='text' placeholder='target string' id='target' onChange={handleTgtChange} value={target}></input> */}
-            
             <br />
             <br />
             <Button variant='outline-dark' size='lg' className='button-text2' onClick={() => dataHandler(target, productions)}>&nbsp;&nbsp;Submit&nbsp;&nbsp;</Button>
@@ -93,11 +88,3 @@ function Input({dataHandler}){
     )
 }
 export default Input;
-
-
-{/* <input id={'1' + item.id} placeholder='Nonterminal symbol' onChange={handleChange} value={(item.key).charAt(item.key.length - 1).toUpperCase()} type='text' required></input>
-
-<input id={'2'+item.id} placeholder='Terminal/Nonterminal symbol' onChange={handleChange} value={item.value} type='text' required></input>
-
-<button id={item.id} style={{ height: '30px', width: '30px', padding: '5px', margin: '5px' }} onClick={removeProduction}> - </button> */}
-
