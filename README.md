@@ -1,4 +1,4 @@
-**Cocke Younger Kasami (CYK) Algorithm**__
+**Cocke Younger Kasami (CYK) Algorithm**<br />
 Used to find whether a given string will be accepted by the given Context Free Grammar
 
 **Installation Guide**__
