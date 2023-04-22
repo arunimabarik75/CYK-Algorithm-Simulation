@@ -173,7 +173,6 @@ hr {
     padding-right: 15px;
 } 
 
-
 .button-text:hover span{
     display: none;
 }
@@ -194,4 +193,10 @@ hr {
 }
 .hide123{
     visibility: hidden;
+}
+
+ol {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1.5em;
+    color: blue;
 }

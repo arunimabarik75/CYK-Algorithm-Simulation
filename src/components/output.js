@@ -58,8 +58,10 @@ export default function Output({table, target, substr, cname} ) {
                     ))}
                 </tbody>
             </table>
+            <br />
             <p className={cname}>Cross Product Calculations</p>
             <DetailedOutput table = {table} k= {k}></DetailedOutput>
+            <br />
             <p className={cname}>Accepted substrings</p>
             <ol>
                 {
